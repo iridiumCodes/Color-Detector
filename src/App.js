@@ -4,9 +4,9 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <Navigation />
+    <div className="App" style={{display:'flex', justifyContent: 'space-between'}}>
       <Logo />
+      <Navigation />
       {/*<ImageLinkField />
       <ColorDetection />*/} 
     </div>
