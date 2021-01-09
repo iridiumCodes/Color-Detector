@@ -2,7 +2,7 @@ import Navigation from './components/Navigation/Navigation'
 import Logo from './components/Logo/Logo'
 import ImageLinkField from './components/ImageLinkField/ImageLinkField'
 import './App.css';
-import { Fragment } from 'react';
+import { Component, Fragment } from 'react';
 import Particles from 'react-particles-js';
 
 const particlesOptions = {
@@ -116,34 +116,36 @@ const particlesOptions = {
     "retina_detect": true  
 }
 
-function App() {
+
+class App extends Component {
   constructor() {
     super();
     this.state = {
       input: '',
     }
   }
-
-  onInputChange = () => {
-
-
+ 
+  onInputChange = (event) => {
+    console.log(event);
   }
   
-  return (
-    <>
-      <Particles id="particles-js"
-            params={particlesOptions}    
-      />
-      <div className="App" style={{display:'flex', justifyContent: 'space-between'}}>
-        <Logo />
-        <Navigation />
-      </div>
-      <div>
-        <ImageLinkField />
-      </div>
-    </>
 
-  );
+  render() {
+    return (
+      <>
+        <Particles id="particles-js"
+              params={particlesOptions}    
+        />
+        <div className="App" style={{display:'flex', justifyContent: 'space-between'}}>
+          <Logo />
+          <Navigation />
+        </div>
+        <div>
+          <ImageLinkField onInputChange={this.onInputChange}/>
+        </div>
+      </>
+
+    );
+  }
 }
-
 export default App;
