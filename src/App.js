@@ -117,6 +117,18 @@ const particlesOptions = {
 }
 
 function App() {
+  constructor() {
+    super();
+    this.state = {
+      input: '',
+    }
+  }
+
+  onInputChange = () => {
+
+
+  }
+  
   return (
     <>
       <Particles id="particles-js"
