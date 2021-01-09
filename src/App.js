@@ -129,6 +129,9 @@ class App extends Component {
     console.log(event.target.value);
   }
   
+  onButtonDetect = (event) => {
+    console.log('click');
+  } 
 
   render() {
     return (
@@ -141,7 +144,9 @@ class App extends Component {
           <Navigation />
         </div>
         <div>
-          <ImageLinkField onInputChange={this.onInputChange}/>
+          <ImageLinkField 
+           onInputChange={this.onInputChange}
+           onButtonDetect={this.onButtonDetect}/>
         </div>
       </>
 
