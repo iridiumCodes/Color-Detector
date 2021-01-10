@@ -4,6 +4,7 @@ import ImageLinkField from './components/ImageLinkField/ImageLinkField'
 import './App.css';
 import { Component, Fragment } from 'react';
 import Particles from 'react-particles-js';
+import Clarifai from 'clarifai';
 
 const particlesOptions = {
     "particles": {
@@ -115,7 +116,9 @@ const particlesOptions = {
     },
     "retina_detect": true  
 }
-
+const app = new Clarifai.App({
+  apiKey: '392df143705b437c8bc35ad3e248ad06'
+ });
 
 class App extends Component {
   constructor() {
@@ -131,6 +134,14 @@ class App extends Component {
   
   onButtonDetect = (event) => {
     console.log('click');
+    app.models.predict(Clarifai.COLOR_MODEL, "https://samples.clarifai.com/face-det.jpg").then(
+      function(response) {
+        console.log(response);
+      },
+      function(err) {
+        //there was an error
+      }
+    );
   } 
 
   render() {
