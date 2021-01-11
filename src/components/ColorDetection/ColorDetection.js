@@ -1,7 +1,10 @@
 import React from 'react';
 
-const ColorDetection = () ={
+const ColorDetection = () => {
+  return (
+    <div>Image Here</div>
 
+  );
 
 }
 
