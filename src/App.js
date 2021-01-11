@@ -3,6 +3,7 @@ import Logo from './components/Logo/Logo'
 import ImageLinkField from './components/ImageLinkField/ImageLinkField'
 import './App.css';
 import { Component, Fragment } from 'react';
+import ColorDetection from './components/ColorDetection/ColorDetection'
 import Particles from 'react-particles-js';
 import Clarifai from 'clarifai';
 
@@ -158,6 +159,9 @@ class App extends Component {
           <ImageLinkField 
            onInputChange={this.onInputChange}
            onButtonDetect={this.onButtonDetect}/>
+        </div>
+        <div>
+          <ColorDetection />
         </div>
       </>
 
