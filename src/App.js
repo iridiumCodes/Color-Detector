@@ -140,7 +140,7 @@ class App extends Component {
       function (response) {
         let colorsArray = response.outputs[0].data.colors;
         for (var value of colorsArray) {
-          console.log(`Color: ${value.w3c.hex}  Name: ${value.w3c.name}`);  // go through response and find hex value for each entry in the array
+          console.log(`Color: ${value.raw_hex}  Closest W3C Name: ${value.w3c.name}`);  // go through response and find hex value for each entry in the array
         }
       },
       function(err) {
