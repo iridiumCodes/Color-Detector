@@ -138,7 +138,10 @@ class App extends Component {
     this.setState({imageUrl: this.state.input}); /* on button detect click, update state with input URL from input*/ 
     app.models.predict(Clarifai.COLOR_MODEL, this.state.input).then( /*if we use this.state.imageUrl we may get 400 errors */
       function (response) {
-        console.log(response);
+        let colorsArray = response.outputs[0].data.colors;
+        for (var value of colorsArray) {
+          console.log(value.w3c.hex);  // go through response and find hex value for each entry in the array
+        }
       },
       function(err) {
         //there was an error
