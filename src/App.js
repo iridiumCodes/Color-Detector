@@ -126,17 +126,18 @@ class App extends Component {
     super();
     this.state = {
       input: '',
+      imageUrl: ''
     }
   }
  
   onInputChange = (event) => {
-    console.log(event.target.value);
+    this.setState({input: event.target.value}); /* update state with input from field*/ 
   }
   
   onButtonDetect = (event) => {
-    console.log('click');
-    app.models.predict(Clarifai.COLOR_MODEL, "https://samples.clarifai.com/face-det.jpg").then(
-      function(response) {
+    this.setState({imageUrl: this.state.input}); /* on button detect click, update state with input URL from input*/ 
+    app.models.predict(Clarifai.COLOR_MODEL, this.state.input).then(
+      function (response) {
         console.log(response);
       },
       function(err) {
@@ -161,7 +162,7 @@ class App extends Component {
            onButtonDetect={this.onButtonDetect}/>
         </div>
         <div>
-          <ColorDetection />
+          <ColorDetection imageUrl = {this.state.imageUrl}/> {/*pass the image URL to the ColorDetection component */}
         </div>
       </>
 

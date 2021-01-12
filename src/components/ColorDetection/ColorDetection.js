@@ -1,9 +1,9 @@
 import React from 'react';
 
-const ColorDetection = () => {
+const ColorDetection = ({ imageUrl }) => {  /*pass image URL as props in the ColorDetection Component */
   return (
     <div className='center'>
-      <img src="https://samples.clarifai.com/face-det.jpg" alt=""/>
+      <img src={imageUrl} alt=""/>
     </div>
 
   );
