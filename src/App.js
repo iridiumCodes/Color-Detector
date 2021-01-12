@@ -136,7 +136,7 @@ class App extends Component {
   
   onButtonDetect = (event) => {
     this.setState({imageUrl: this.state.input}); /* on button detect click, update state with input URL from input*/ 
-    app.models.predict(Clarifai.COLOR_MODEL, this.state.input).then(
+    app.models.predict(Clarifai.COLOR_MODEL, this.state.input).then( /*if we use this.state.imageUrl we may get 400 errors */
       function (response) {
         console.log(response);
       },
