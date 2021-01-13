@@ -161,8 +161,8 @@ class App extends Component {
         </div>
         <div>
           <ImageLinkField 
-           onInputChange={this.onInputChange}
-           onButtonDetect={this.onButtonDetect}/>
+            onInputChange={this.onInputChange}
+            onButtonDetect={this.onButtonDetect}/>
         </div>
         <div>
           <ColorDetection imageUrl = {this.state.imageUrl}/> {/*pass the image URL to the ColorDetection component */}
