@@ -155,7 +155,7 @@ class App extends Component {
         <Particles id="particles-js"
               params={particlesOptions}    
         />
-        <div className="App" style={{display:'flex', justifyContent: 'space-between'}}>
+        <div style={{display: "flex",  justifyContent: "space-between"}}>
           <Logo />
           <Navigation />
         </div>
