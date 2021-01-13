@@ -4,3 +4,8 @@
   background-attachment: fixed;
   background-size: cover;
 }
+
+button {
+  text-align: center;
+  min-width: 100px;
+}
