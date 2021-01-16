@@ -151,14 +151,10 @@ class App extends Component {
     );
   } 
 
-  onRouteChange = () => {
-    this.setState ({route: 'notSignin'});
+  onRouteChange = (route) => {
+    this.setState ({route: route});
   }
 
-  onRouteChangeAgain = () => {
-    this.setState ({route: 'signin'})
-  }
-  
   render() {
     return (
       <>
@@ -178,7 +174,7 @@ class App extends Component {
           <>
             <div style={{display: 'flex', justifyContent:'space-between'}}>
               <Logo />
-              <Navigation onRouteChangeAgain = {this.onRouteChangeAgain} />
+              <Navigation onRouteChange = {this.onRouteChange} />
             </div>
               
             <ImageLinkField 
