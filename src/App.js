@@ -1,6 +1,7 @@
 import Navigation from './components/Navigation/Navigation'
 import Logo from './components/Logo/Logo'
 import ImageLinkField from './components/ImageLinkField/ImageLinkField'
+import Signin from './components/Signin/Signin'
 import './App.css';
 import { Component, Fragment } from 'react';
 import ColorDetection from './components/ColorDetection/ColorDetection'
@@ -155,6 +156,9 @@ class App extends Component {
         <Particles id="particles-js"
               params={particlesOptions}    
         />
+        <div>
+          <Signin />
+        </div>
         <div style={{display: "flex",  justifyContent: "space-between"}}>
           <Logo />
           <Navigation />
