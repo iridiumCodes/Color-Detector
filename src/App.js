@@ -178,7 +178,7 @@ class App extends Component {
           <>
             <div style={{display: 'flex', justifyContent:'space-between'}}>
               <Logo />
-              <Navigation />
+              <Navigation onRouteChangeAgain = {this.onRouteChangeAgain} />
             </div>
               
             <ImageLinkField 
