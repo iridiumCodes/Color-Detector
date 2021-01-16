@@ -158,37 +158,42 @@ class App extends Component {
 
   render() {
     return (
-      <>
+      <div>
         <Particles id="particles-js"
               params={particlesOptions}    
         />
-        <div >
-          {this.state.route === 'signin'
-          ? 
-          <>
-            <div className='center'>
-              <Logo />
-            </div>
-            <div><Signin onRouteChange = {this.onRouteChange}/></div>
-          </>
-          : 
-          <>
-            <div style={{display: 'flex', justifyContent:'space-between'}}>
-              <Logo />
-              <Navigation onRouteChange = {this.onRouteChange} />
-            </div>
-              
-            <ImageLinkField 
-                onInputChange={this.onInputChange}
-                onButtonDetect={this.onButtonDetect}/>
-              
-            <ColorDetection imageUrl = {this.state.imageUrl}/> {/*pass the image URL to the ColorDetection component */}
-          </>
-          }
+        <div>
+          {this.state.route === 'home'
+          ? <>
+              <div style={{display: 'flex', justifyContent:'space-between'}}>
+                <Logo />
+                <Navigation onRouteChange = {this.onRouteChange} />
+              </div>
+                
+              <ImageLinkField 
+                  onInputChange={this.onInputChange}
+                  onButtonDetect={this.onButtonDetect}/>
+                
+              <ColorDetection imageUrl = {this.state.imageUrl}/> {/*pass the image URL to the ColorDetection component */}
+            </>
+          :
+          (this.state.route === 'signin'
+          ? <>
+              <div className='center'>
+                <Logo />
+              </div>
+              <div><Signin onRouteChange = {this.onRouteChange}/></div>
+            </>
+          : <>
+              <div className='center'>
+                <Logo />
+              </div>
+              <div><Signup onRouteChange = {this.onRouteChange}/></div>
+            </>
+          )}
         </div>
-      </>
-
+      </div>
     );
-  }
 }
+
 export default App;
