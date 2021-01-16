@@ -127,7 +127,8 @@ class App extends Component {
     super();
     this.state = {
       input: '',
-      imageUrl: ''
+      imageUrl: '',
+      route: 'signin'
     }
   }
  
@@ -156,20 +157,29 @@ class App extends Component {
         <Particles id="particles-js"
               params={particlesOptions}    
         />
-        <div>
-          <Signin />
-        </div>
-        <div style={{display: "flex",  justifyContent: "space-between"}}>
-          <Logo />
-          <Navigation />
-        </div>
-        <div>
-          <ImageLinkField 
-            onInputChange={this.onInputChange}
-            onButtonDetect={this.onButtonDetect}/>
-        </div>
-        <div>
-          <ColorDetection imageUrl = {this.state.imageUrl}/> {/*pass the image URL to the ColorDetection component */}
+        <div >
+          {this.state.route === 'signin'
+          ? 
+          <>
+            <div className='center'>
+              <Logo />
+            </div>
+            <div><Signin /></div>
+          </>
+          : 
+          <>
+            <div style={{display: 'flex', justifyContent:'space-between'}}>
+              <Logo />
+              <Navigation />
+            </div>
+              
+            <ImageLinkField 
+                onInputChange={this.onInputChange}
+                onButtonDetect={this.onButtonDetect}/>
+              
+            <ColorDetection imageUrl = {this.state.imageUrl}/> {/*pass the image URL to the ColorDetection component */}
+          </>
+          }
         </div>
       </>
 
