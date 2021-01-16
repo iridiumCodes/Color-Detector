@@ -2,6 +2,7 @@ import Navigation from './components/Navigation/Navigation'
 import Logo from './components/Logo/Logo'
 import ImageLinkField from './components/ImageLinkField/ImageLinkField'
 import Signin from './components/Signin/Signin'
+import Signup from './components/Signup/Signup'
 import './App.css';
 import { Component, Fragment } from 'react';
 import ColorDetection from './components/ColorDetection/ColorDetection'
