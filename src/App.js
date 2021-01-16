@@ -151,6 +151,14 @@ class App extends Component {
     );
   } 
 
+  onRouteChange = () => {
+    this.setState ({route: 'notSignin'});
+  }
+
+  onRouteChangeAgain = () => {
+    this.setState ({route: 'signin'})
+  }
+  
   render() {
     return (
       <>
@@ -164,7 +172,7 @@ class App extends Component {
             <div className='center'>
               <Logo />
             </div>
-            <div><Signin /></div>
+            <div><Signin onRouteChange = {this.onRouteChange}/></div>
           </>
           : 
           <>
