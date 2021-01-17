@@ -22,7 +22,7 @@ const Signup = ({ onRouteChange }) => {
             <label class="pa0 ma0 lh-copy f6 pointer"><input type="checkbox"/> Remember me</label>
           </fieldset>
           <div class="">
-            <input class="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" type="submit" value="Sign up"/>
+            <input onClick = { () => onRouteChange('signin') } class="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" type="submit" value="Sign up"/>
           </div>
         </form>
       </article>
