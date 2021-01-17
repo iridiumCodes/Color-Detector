@@ -4,15 +4,15 @@ const Signin = ({ onRouteChange }) => {
   return (
     <main class="pa4 black-80">
       <article class="br3 ba dark-gray b--black-10 mv4 w-100 w-50-m w-25-l mw6 center pa3 shadow-5">
-        <form class="measure">
+        <div class="measure">
           <fieldset id="sign_in" class="ba b--transparent ph0 mh0">
             <legend class="f4 fw6 ph0 mh0 center">Sign In</legend>
             <div class="mt3">
-              <label class="db fw6 lh-copy f6" for="email-address">Email</label>
+              <label class="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
               <input class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="email" name="email-address"  id="email-address"/>
             </div>
             <div class="mv3">
-              <label class="db fw6 lh-copy f6" for="password">Password</label>
+              <label class="db fw6 lh-copy f6" htmlFor="password">Password</label>
               <input class="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="password" name="password"  id="password"/>
             </div>
             <label class="pa0 ma0 lh-copy f6 pointer"><input type="checkbox"/> Remember me</label>
@@ -24,7 +24,7 @@ const Signin = ({ onRouteChange }) => {
             <p onClick = { () => onRouteChange('signup') } href="#0" class="f6 link dim black db pointer">Sign up</p>
             <a href="#0" class="f6 link dim black db">Forgot your password?</a>
           </div>
-        </form>
+        </div>
       </article>
   </main>
   )

@@ -127,7 +127,6 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      input: '',
       imageUrl: '',
       route: 'signin'
     }
@@ -157,13 +156,14 @@ class App extends Component {
   }
 
   render() {
+    const { imageUrl, route } = this.state;
     return (
       <div>
         <Particles id="particles-js"
               params={particlesOptions}    
         />
         <div>
-          {this.state.route === 'home'
+          {route === 'home'
           ? <>
               <div style={{display: 'flex', justifyContent:'space-between'}}>
                 <Logo />
@@ -174,10 +174,10 @@ class App extends Component {
                   onInputChange={this.onInputChange}
                   onButtonDetect={this.onButtonDetect}/>
                 
-              <ColorDetection imageUrl = {this.state.imageUrl}/> {/*pass the image URL to the ColorDetection component */}
+              <ColorDetection imageUrl = {imageUrl}/> {/*pass the image URL to the ColorDetection component */}
             </>
           :
-          (this.state.route === 'signin'
+          (route === 'signin'
           ? <>
               <div className='center'>
                 <Logo />
