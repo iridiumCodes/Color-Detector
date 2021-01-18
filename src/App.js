@@ -2,7 +2,7 @@ import Navigation from './components/Navigation/Navigation'
 import Logo from './components/Logo/Logo'
 import ImageLinkField from './components/ImageLinkField/ImageLinkField'
 import Signin from './components/Signin/Signin'
-import Signup from './components/Signup/Signup'
+import Register from './components/Register/Register'
 import './App.css';
 import { Component, Fragment } from 'react';
 import ColorDetection from './components/ColorDetection/ColorDetection'
@@ -162,7 +162,7 @@ class App extends Component {
         <Particles id="particles-js"
               params={particlesOptions}    
         />
-        <div>
+        <>
           {route === 'home'
           ? <>
               <div style={{display: 'flex', justifyContent:'space-between'}}>
@@ -188,10 +188,10 @@ class App extends Component {
               <div className='center'>
                 <Logo />
               </div>
-              <div><Signup onRouteChange = {this.onRouteChange}/></div>
+              <div><Register onRouteChange = {this.onRouteChange}/></div>
             </>
           )}
-        </div>
+        </>
       </div>
     );
 }

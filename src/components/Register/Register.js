@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Signup = ({ onRouteChange }) => {
+const Register = ({ onRouteChange }) => {
   return (
     <main class="pa4 black-80">
       <article class="br3 ba dark-gray b--black-10 mv4 w-100 w-50-m w-25-l mw6 center pa3 shadow-5">
         <div class="measure">
           <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
-            <legend class="f4 fw6 ph0 mh0">Sign Up</legend>
+            <legend class="f4 fw6 ph0 mh0 center">Register</legend>
             <div class="mt3">
               <label class="db fw6 lh-copy f6" htmlFor="name">Name</label>
               <input class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="text" name="name"  id="name"/>
@@ -22,7 +22,7 @@ const Signup = ({ onRouteChange }) => {
             <label class="pa0 ma0 lh-copy f6 pointer"><input type="checkbox"/> Remember me</label>
           </fieldset>
           <div class="">
-            <input onClick = { () => onRouteChange('signin') } class="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" type="submit" value="Sign up"/>
+            <input onClick = { () => onRouteChange('signin') } class="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" type="submit" value="Register"/>
           </div>
         </div>
       </article>
@@ -30,4 +30,4 @@ const Signup = ({ onRouteChange }) => {
   )
 }
 
-export default Signup;
+export default Register;
