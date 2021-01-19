@@ -119,6 +119,7 @@ const particlesOptions = {
     },
     "retina_detect": true  
 }
+
 const app = new Clarifai.App({
   apiKey: '392df143705b437c8bc35ad3e248ad06'
  });
@@ -132,6 +133,13 @@ class App extends Component {
     }
   }
  
+
+  componentDidMount() {
+    fetch('http://localhost:3000')
+    .then(response => response.json())
+    .then(console.log)
+  }
+  
   onInputChange = (event) => {
     this.setState({input: event.target.value}); /* update state with input from field*/ 
   }
