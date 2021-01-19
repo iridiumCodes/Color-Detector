@@ -139,7 +139,7 @@ class App extends Component {
     .then(response => response.json())
     .then(console.log)
   }
-  
+
   onInputChange = (event) => {
     this.setState({input: event.target.value}); /* update state with input from field*/ 
   }
@@ -154,7 +154,7 @@ class App extends Component {
         }
       },
       function(err) {
-        //there was an error
+        console.log(err);  //there was an error
       }
     );
   } 
