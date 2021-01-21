@@ -195,13 +195,13 @@ class App extends Component {
                 <Logo />
                 <Navigation onRouteChange = {this.onRouteChange} />
               </div>
-                
+              <Palettes name = {this.state.user.name} palettes = {this.state.user.palettes} /> 
               <ImageLinkField 
                   onInputChange={this.onInputChange}
                   onButtonDetect={this.onButtonDetect}/>
                 
               <ColorDetection imageUrl = {imageUrl}/> {/*pass the image URL to the ColorDetection component */}
-              <Palettes name = {this.state.user.name} palettes = {this.state.user.palettes} />
+              
             </>
           :
           (route === 'signin'

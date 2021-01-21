@@ -2,11 +2,11 @@ import React from 'react';
 
 const Palettes = ({name, palettes}) => {
   return(
-      <div>
-        <div className = 'white f3'>
+      <div className='center pa3'>
+        <div className = 'black f3'>
           {`${name}, these are your saved palettes:`}
         </div>
-        <div className = 'white f1'>
+        <div className = 'black f1'>
           {palettes}
         </div>
       </div>
