@@ -1,5 +1,4 @@
 import React from 'react';
-import { DivMode } from 'react-particles-js';
 
 const Palettes = ({name, palettes}) => {
   return(
