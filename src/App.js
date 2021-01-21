@@ -3,6 +3,7 @@ import Logo from './components/Logo/Logo'
 import ImageLinkField from './components/ImageLinkField/ImageLinkField'
 import Signin from './components/Signin/Signin'
 import Register from './components/Register/Register'
+import Palettes from './components/Palettes/Palettes'
 import './App.css';
 import { Component, Fragment } from 'react';
 import ColorDetection from './components/ColorDetection/ColorDetection'
@@ -200,6 +201,7 @@ class App extends Component {
                   onButtonDetect={this.onButtonDetect}/>
                 
               <ColorDetection imageUrl = {imageUrl}/> {/*pass the image URL to the ColorDetection component */}
+              <Palettes name = {this.state.user.name} palettes = {this.state.user.palettes} />
             </>
           :
           (route === 'signin'
@@ -207,7 +209,7 @@ class App extends Component {
               <div className='center'>
                 <Logo />
               </div>
-              <div><Signin onRouteChange = {this.onRouteChange}/></div>
+              <div><Signin loadUser = {this.loadUser} onRouteChange = {this.onRouteChange}/></div>
             </>
           : <>
               <div className='center'>
