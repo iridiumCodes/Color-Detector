@@ -129,7 +129,14 @@ class App extends Component {
     super();
     this.state = {
       imageUrl: '',
-      route: 'signin'
+      route: 'signin',
+      user: {
+        id: '',
+        name: '',
+        email: '',
+        palettes: '',
+        joined: ''
+      }
     }
   }
  
@@ -161,6 +168,16 @@ class App extends Component {
 
   onRouteChange = (route) => {
     this.setState ({route: route});
+  }
+
+  loadUser = (data) => {
+    this.setState ({user: {
+      id: data.id,
+      name: data.name,
+      email: data.email,
+      palettes: data.palettes,
+      joined: data.joined
+    }})
   }
 
   render() {
@@ -196,7 +213,7 @@ class App extends Component {
               <div className='center'>
                 <Logo />
               </div>
-              <div><Register onRouteChange = {this.onRouteChange}/></div>
+              <div><Register loadUser = {this.loadUser} onRouteChange = {this.onRouteChange}/></div>
             </>
           )}
         </>
