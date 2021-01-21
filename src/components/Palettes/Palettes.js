@@ -8,6 +8,7 @@ const Palettes = ({name, palettes}) => {
         </div>
         <div className = 'black f1'>
           {palettes}
+          {/*TODO render saved palettes*/}
         </div>
       </div>
       

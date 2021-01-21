@@ -201,6 +201,7 @@ class App extends Component {
                   onButtonDetect={this.onButtonDetect}/>
                 
               <ColorDetection imageUrl = {imageUrl}/> {/*pass the image URL to the ColorDetection component */}
+              {/*add a rendering of the colors and probabilites in chart, or simple div swatches for the user to pick */}
               
             </>
           :
