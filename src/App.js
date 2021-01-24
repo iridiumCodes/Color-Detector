@@ -1,14 +1,14 @@
-import Navigation from './components/Navigation/Navigation';
-import Logo from './components/Logo/Logo';
-import ImageLinkField from './components/ImageLinkField/ImageLinkField';
-import Signin from './components/Signin/Signin';
-import Register from './components/Register/Register';
-import Palettes from './components/Palettes/Palettes';
-import './App.css';
-import {Component, Fragment} from 'react';
-import ColorDetection from './components/ColorDetection/ColorDetection';
-import Particles from 'react-particles-js';
 import Clarifai from 'clarifai';
+import { Component } from 'react';
+import Particles from 'react-particles-js';
+import './App.css';
+import ColorDetection from './components/ColorDetection/ColorDetection';
+import ImageLinkField from './components/ImageLinkField/ImageLinkField';
+import Logo from './components/Logo/Logo';
+import Navigation from './components/Navigation/Navigation';
+import Palettes from './components/Palettes/Palettes';
+import Register from './components/Register/Register';
+import Signin from './components/Signin/Signin';
 
 const particlesOptions = {
   particles: {
