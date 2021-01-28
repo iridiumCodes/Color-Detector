@@ -10,6 +10,7 @@ const ImageLinkField = ({onInputChange, onButtonDetect}) => {
           type="text"
           className="w-two-thirds pa2"
           onChange={onInputChange}
+          placeholder="Paste Image URL"
         />
         <button
           className="w-third grow link f4 pv2 light-purple tc"
