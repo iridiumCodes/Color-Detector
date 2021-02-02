@@ -125,20 +125,23 @@ const app = new Clarifai.App({
   apiKey: '392df143705b437c8bc35ad3e248ad06',
 });
 
+const initialState = {
+  imageUrl: '',
+  route: 'signin',
+  isSignedIn: false,
+  user: {
+    id: '',
+    name: '',
+    email: '',
+    palettes: '',
+    joined: '',
+  },
+};
+
 class App extends Component {
   constructor() {
     super();
-    this.state = {
-      imageUrl: '',
-      route: 'signin',
-      user: {
-        id: '',
-        name: '',
-        email: '',
-        palettes: '',
-        joined: '',
-      },
-    };
+    this.state = initialState;
   }
 
   componentDidMount() {
@@ -174,8 +177,13 @@ class App extends Component {
   };
 
   onRouteChange = (route) => {
+    if (route === 'signout') {
+      this.setState(initialState)
+    } else if (route === 'home') {
+      this.setState({isSignedIn: true})
+    }
     this.setState({route: route});
-  };
+  }
 
   loadUser = (data) => {
     this.setState({
@@ -190,10 +198,11 @@ class App extends Component {
   };
 
   render() {
-    const {imageUrl, route} = this.state;
+    const {isSignedIn, imageUrl, route} = this.state;
     return (
       <div>
         <Particles id="particles-js" params={particlesOptions} />
+        
         <>
           {route === 'home' ? (
             <>
@@ -201,17 +210,17 @@ class App extends Component {
                 <Logo />
                 <Navigation onRouteChange={this.onRouteChange} />
               </div>
-              <Palettes
+              {/* <Palettes
                 name={this.state.user.name}
                 palettes={this.state.user.palettes}
-              />
+              /> */}
               <ImageLinkField
                 onInputChange={this.onInputChange}
                 onButtonDetect={this.onButtonDetect}
               />
               <ColorDetection imageUrl={imageUrl} />{' '}
               {/*pass the image URL to the ColorDetection component */}
-              {/*add a rendering of the colors and probabilites in chart, or simple div swatches for the user to pick */}
+              {/*TODO add a rendering of the colors and probabilites in chart, & add button to save palette in user profile*/}
             </>
           ) : route === 'signin' ? (
             <>
