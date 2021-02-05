@@ -1,4 +1,3 @@
-import Clarifai from 'clarifai';
 import { Component } from 'react';
 import Particles from 'react-particles-js';
 import './App.css';
@@ -121,10 +120,6 @@ const particlesOptions = {
   retina_detect: true,
 };
 
-const app = new Clarifai.App({
-  apiKey: '392df143705b437c8bc35ad3e248ad06',
-});
-
 const initialState = {
   imageUrl: '',
   route: 'signin',
@@ -160,7 +155,14 @@ class App extends Component {
     this.setState({
       imageUrl: this.state.input,
     }); /* on button detect click, update state with input URL from input*/
-    app.models.predict(Clarifai.COLOR_MODEL, this.state.input).then(
+    fetch('http://localhost:3000/imageurl', {
+      method: 'post',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        input: this.state.input
+      })
+    })
+    .then(
       /*if we use this.state.imageUrl we may get 400 errors */
       function (response) {
         let colorsArray = response.outputs[0].data.colors;
