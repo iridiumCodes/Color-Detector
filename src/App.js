@@ -155,13 +155,14 @@ class App extends Component {
     this.setState({
       imageUrl: this.state.input,
     }); /* on button detect click, update state with input URL from input*/
-    fetch('http://localhost:3000/imageurl', {
+    fetch('http://localhost:3000/imageUrl', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
         input: this.state.input
       })
     })
+    .then(response => response.json())
     .then(
       /*if we use this.state.imageUrl we may get 400 errors */
       function (response) {
