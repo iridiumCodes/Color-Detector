@@ -140,7 +140,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000')
+    fetch('https://immense-meadow-72319.herokuapp.com/')
       .then((response) => response.json())
       .then(console.log);
   }
@@ -155,7 +155,7 @@ class App extends Component {
     this.setState({
       imageUrl: this.state.input,
     }); /* on button detect click, update state with input URL from input*/
-    fetch('http://localhost:3000/imageUrl', {
+    fetch('https://immense-meadow-72319.herokuapp.com/imageUrl', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
