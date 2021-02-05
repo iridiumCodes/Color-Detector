@@ -40,6 +40,7 @@ class Register extends React.Component {
       });
   };
   render() {
+    const {onRouteChange} = this.props;
     return (
       <main className="pa4 black-80">
         <article className="br3 ba dark-gray b--black-10 mv4 w-100 w-50-m w-25-l mw6 center pa3 shadow-5">
@@ -86,13 +87,19 @@ class Register extends React.Component {
                 <input type="checkbox" /> Remember me
               </label>
             </fieldset>
-            <div className="">
+            <div className="lh-copy mt3">
               <input
                 onClick={this.onSubmitRegister}
                 className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
                 type="submit"
                 value="Register"
               />
+              <p
+                onClick={() => onRouteChange('signin')}
+                href="#0"
+                className="f6 link dim black db pointer">
+                Sign In
+              </p>
             </div>
           </div>
         </article>
