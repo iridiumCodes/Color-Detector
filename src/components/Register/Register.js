@@ -83,22 +83,19 @@ class Register extends React.Component {
                   id="password"
                 />
               </div>
-              <label className="pa0 ma0 lh-copy f6 pointer">
-                <input type="checkbox" /> Remember me
-              </label>
             </fieldset>
             <div className="lh-copy mt3">
               <input
                 onClick={this.onSubmitRegister}
                 className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
                 type="submit"
-                value="Register"
+                value="Set Password and Login"
               />
               <p
                 onClick={() => onRouteChange('signin')}
                 href="#0"
                 className="f6 link dim black db pointer">
-                Sign In
+                &#8592; Go to Sign In
               </p>
             </div>
           </div>
