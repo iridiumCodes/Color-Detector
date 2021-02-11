@@ -122,6 +122,7 @@ const particlesOptions = {
 
 const initialState = {
   imageUrl: '',
+  colors: [],
   route: 'signin',
   isSignedIn: false,
   user: {
@@ -170,11 +171,14 @@ class App extends Component {
         colorsArray.sort((a, b) => (a.value > b.value) ? -1 : ((b.value > a.value) ? 1 : 0));
         console.log(colorsArray);
         for (var color of colorsArray) {
+          this.setState(state => {
+            
+          })
+        }
           console.log(
             `Color: ${color.raw_hex}  Probability: ${color.value}`,
           ); // go through response and find hex value for each entry in the array
-        }
-      },
+        },
       function (err) {
         console.log(err); //there was an error
       },
@@ -203,7 +207,7 @@ class App extends Component {
   };
 
   render() {
-    const {isSignedIn, imageUrl, route} = this.state;
+    const {isSignedIn, imageUrl, route, colors} = this.state;
     return (
       <div>
         <Particles id="particles-js" params={particlesOptions} />
@@ -223,7 +227,7 @@ class App extends Component {
                 onInputChange={this.onInputChange}
                 onButtonDetect={this.onButtonDetect}
               />
-              <ColorDetection imageUrl={imageUrl} />{' '}
+              <ColorDetection imageUrl={imageUrl} colors={this.colors} />{' '}
               {/*pass the image URL to the ColorDetection component */}
               {/*TODO add a rendering of the colors and probabilites in chart, & add button to save palette in user profile*/}
             </>
