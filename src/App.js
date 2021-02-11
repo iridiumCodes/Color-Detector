@@ -168,9 +168,9 @@ class App extends Component {
       function (response) {
         let colorsArray = response.outputs[0].data.colors;
         console.log(colorsArray);
-        for (var value of colorsArray) {
+        for (var color of colorsArray) {
           console.log(
-            `Color: ${value.raw_hex}  Probability: ${value.w3c.name}`,
+            `Color: ${color.raw_hex}  Probability: ${color.value}`,
           ); // go through response and find hex value for each entry in the array
         }
       },
