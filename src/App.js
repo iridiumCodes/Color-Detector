@@ -167,6 +167,7 @@ class App extends Component {
       /*if we use this.state.imageUrl we may get 400 errors */
       function (response) {
         let colorsArray = response.outputs[0].data.colors;
+        colorsArray.sort((a, b) => (a.value > b.value) ? -1 : ((b.value > a.value) ? 1 : 0));
         console.log(colorsArray);
         for (var color of colorsArray) {
           console.log(
