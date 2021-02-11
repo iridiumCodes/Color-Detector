@@ -166,8 +166,8 @@ class App extends Component {
     .then(
       /*if we use this.state.imageUrl we may get 400 errors */
       function (response) {
-        console.log(response);
         let colorsArray = response.outputs[0].data.colors;
+        console.log(colorsArray);
         for (var value of colorsArray) {
           console.log(
             `Color: ${value.raw_hex}  Probability: ${value.w3c.name}`,
