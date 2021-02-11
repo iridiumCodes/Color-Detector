@@ -166,10 +166,11 @@ class App extends Component {
     .then(
       /*if we use this.state.imageUrl we may get 400 errors */
       function (response) {
+        console.log(response);
         let colorsArray = response.outputs[0].data.colors;
         for (var value of colorsArray) {
           console.log(
-            `Color: ${value.raw_hex}  Closest W3C Name: ${value.w3c.name}`,
+            `Color: ${value.raw_hex}  Probability: ${value.w3c.name}`,
           ); // go through response and find hex value for each entry in the array
         }
       },
