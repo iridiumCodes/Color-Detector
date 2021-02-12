@@ -122,6 +122,7 @@ const particlesOptions = {
 
 const initialState = {
   imageUrl: '',
+  colors: '',
   route: 'signin',
   isSignedIn: false,
   user: {
@@ -134,8 +135,8 @@ const initialState = {
 };
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = initialState;
   }
 
@@ -165,20 +166,22 @@ class App extends Component {
       .then((response) => response.json())
       .then(
         /*if we use this.state.imageUrl we may get 400 errors */
-        function (response) {
-          let colorsArray = response.outputs[0].data.colors;
-          colorsArray.sort((a, b) =>
-            a.value > b.value ? -1 : b.value > a.value ? 1 : 0
-          );
-          console.log(colorsArray);
-          for (var color of colorsArray) {
-            console.log(`Color: ${color.raw_hex}  Probability: ${color.value}`); // go through response and find hex value for each entry in the array
-          }
-        },
-        function (err) {
-          console.log(err); //there was an error
-        }
+        (response) =>
+          this.setState({
+            colors: response.outputs[0].data.colors,
+          })
       );
+    // let colorsArray = response.outputs[0].data.colors;
+    // colorsArray.sort((a, b) =>
+    //   a.value > b.value ? -1 : b.value > a.value ? 1 : 0
+    // );
+    // console.log(colorsArray);
+    // for (var color of colorsArray) {
+    //   console.log(`Color: ${color.raw_hex}  Probability: ${color.value}`); // go through response and find hex value for each entry in the array
+    // }
+    // function (err) {
+    //   console.log(err); //there was an error
+    // }
   };
 
   onRouteChange = (route) => {
@@ -224,7 +227,7 @@ class App extends Component {
                 onButtonDetect={this.onButtonDetect}
               />
               <ColorDetection imageUrl={imageUrl} />
-              <Swatches />
+              <Swatches colors={colors} />
               {/*pass the image URL to the ColorDetection component */}
               {/*TODO add a rendering of the colors and probabilites in chart, & add button to save palette in user profile*/}
             </>
