@@ -13,6 +13,7 @@ class Register extends React.Component {
   onNameChange = (event) => {
     this.setState({ registerName: event.target.value });
   };
+
   onEmailChange = (event) => {
     this.setState({ registerEmail: event.target.value });
   };
