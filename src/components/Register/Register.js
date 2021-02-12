@@ -11,20 +11,20 @@ class Register extends React.Component {
   }
 
   onNameChange = (event) => {
-    this.setState({registerName: event.target.value});
+    this.setState({ registerName: event.target.value });
   };
   onEmailChange = (event) => {
-    this.setState({registerEmail: event.target.value});
+    this.setState({ registerEmail: event.target.value });
   };
 
   onPasswordChange = (event) => {
-    this.setState({registerPassword: event.target.value});
+    this.setState({ registerPassword: event.target.value });
   };
 
   onSubmitRegister = () => {
     fetch('https://immense-meadow-72319.herokuapp.com/register', {
       method: 'post',
-      headers: {'Content-Type': 'application/json'},
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         name: this.state.registerName,
         email: this.state.registerEmail,
@@ -40,7 +40,7 @@ class Register extends React.Component {
       });
   };
   render() {
-    const {onRouteChange} = this.props;
+    const { onRouteChange } = this.props;
     return (
       <main className="pa4 black-80">
         <article className="br3 ba dark-gray b--black-10 mv4 w-100 w-50-m w-25-l mw6 center pa3 shadow-5">
@@ -94,7 +94,8 @@ class Register extends React.Component {
               <p
                 onClick={() => onRouteChange('signin')}
                 href="#0"
-                className="f6 link dim black db pointer">
+                className="f6 link dim black db pointer"
+              >
                 &#8592; Go to Sign In
               </p>
             </div>

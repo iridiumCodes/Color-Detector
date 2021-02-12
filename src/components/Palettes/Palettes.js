@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Palettes = ({name, palettes}) => {
+const Palettes = ({ name, palettes }) => {
   return (
     <div className="center pa3">
       <div className="black f3">

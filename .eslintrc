@@ -5,7 +5,16 @@
 
   "plugins": ["prettier"],
 
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+        "jsx": true
+    }
+  },
+
   "rules": {
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "semi": "error"
   }
 }

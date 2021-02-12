@@ -1,7 +1,7 @@
 import React from 'react';
 import './ImageLinkField.css';
 
-const ImageLinkField = ({onInputChange, onButtonDetect}) => {
+const ImageLinkField = ({ onInputChange, onButtonDetect }) => {
   return (
     <div className="centerVertical tc mt6">
       <h1>Discover your new color palette! Upload an image link below: </h1>
@@ -14,7 +14,8 @@ const ImageLinkField = ({onInputChange, onButtonDetect}) => {
         />
         <button
           className="w-third grow link f4 pv2 light-purple tc"
-          onClick={onButtonDetect}>
+          onClick={onButtonDetect}
+        >
           Detect
         </button>
       </div>
