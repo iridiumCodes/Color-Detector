@@ -2,6 +2,7 @@ import { Component } from 'react';
 import Particles from 'react-particles-js';
 import './App.css';
 import ColorDetection from './components/ColorDetection/ColorDetection';
+import Swatches from './components/Swatches/Swatches';
 import ImageLinkField from './components/ImageLinkField/ImageLinkField';
 import Logo from './components/Logo/Logo';
 import Navigation from './components/Navigation/Navigation';
@@ -157,39 +158,38 @@ class App extends Component {
     }); /* on button detect click, update state with input URL from input*/
     fetch('https://immense-meadow-72319.herokuapp.com/imageUrl', {
       method: 'post',
-      headers: {'Content-Type': 'application/json'},
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        input: this.state.input
-      })
+        input: this.state.input,
+      }),
     })
-    .then(response => response.json())
-    .then(
-      /*if we use this.state.imageUrl we may get 400 errors */
-      function (response) {
-        let colorsArray = response.outputs[0].data.colors;
-        colorsArray.sort((a, b) => (a.value > b.value) ? -1 : ((b.value > a.value) ? 1 : 0));
-        console.log(colorsArray);
-        for (var color of colorsArray) {
-          console.log(
-            `Color: ${color.raw_hex}  Probability: ${color.value}`,
-          ); // go through response and find hex value for each entry in the array
-        }
-          
+      .then((response) => response.json())
+      .then(
+        /*if we use this.state.imageUrl we may get 400 errors */
+        function (response) {
+          let colorsArray = response.outputs[0].data.colors;
+          colorsArray.sort((a, b) =>
+            a.value > b.value ? -1 : b.value > a.value ? 1 : 0
+          );
+          console.log(colorsArray);
+          for (var color of colorsArray) {
+            console.log(`Color: ${color.raw_hex}  Probability: ${color.value}`); // go through response and find hex value for each entry in the array
+          }
         },
-      function (err) {
-        console.log(err); //there was an error
-      },
-    );
+        function (err) {
+          console.log(err); //there was an error
+        }
+      );
   };
 
   onRouteChange = (route) => {
     if (route === 'signout') {
-      this.setState(initialState)
+      this.setState(initialState);
     } else if (route === 'home') {
-      this.setState({isSignedIn: true})
+      this.setState({ isSignedIn: true });
     }
-    this.setState({route: route});
-  }
+    this.setState({ route: route });
+  };
 
   loadUser = (data) => {
     this.setState({
@@ -204,15 +204,15 @@ class App extends Component {
   };
 
   render() {
-    const {isSignedIn, imageUrl, route, colors} = this.state;
+    const { isSignedIn, imageUrl, route, colors } = this.state;
     return (
       <div>
         <Particles id="particles-js" params={particlesOptions} />
-        
+
         <>
           {route === 'home' ? (
             <>
-              <div style={{display: 'flex', justifyContent: 'space-between'}}>
+              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                 <Logo />
                 <Navigation onRouteChange={this.onRouteChange} />
               </div>
@@ -224,7 +224,7 @@ class App extends Component {
                 onInputChange={this.onInputChange}
                 onButtonDetect={this.onButtonDetect}
               />
-              <ColorDetection imageUrl={imageUrl}/>
+              <ColorDetection imageUrl={imageUrl} />
               <Swatches />
               {/*pass the image URL to the ColorDetection component */}
               {/*TODO add a rendering of the colors and probabilites in chart, & add button to save palette in user profile*/}
