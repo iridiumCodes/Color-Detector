@@ -2,13 +2,12 @@ import { Component } from 'react';
 import Particles from 'react-particles-js';
 import './App.css';
 import ColorDetection from './components/ColorDetection/ColorDetection';
-import Swatches from './components/Swatches/Swatches';
 import ImageLinkField from './components/ImageLinkField/ImageLinkField';
 import Logo from './components/Logo/Logo';
 import Navigation from './components/Navigation/Navigation';
-import Palettes from './components/Palettes/Palettes';
 import Register from './components/Register/Register';
 import Signin from './components/Signin/Signin';
+import Swatches from './components/Swatches/Swatches';
 
 const particlesOptions = {
   particles: {
