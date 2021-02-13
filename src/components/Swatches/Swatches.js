@@ -7,20 +7,24 @@ const Swatches = ({ colors }) => {
 
   return (
     <>
-      <h2 className="center">Colors Detected:</h2>
+      <h2>Colors Detected:</h2>
       {colors.map((color) => (
         // <div className="center pa2">
-        <div
-          key={color.value}
-          className="mr4"
-          style={{
-            height: '40px',
-            width: '80px',
-            backgroundColor: color.raw_hex,
-          }}
-        >
-          <div>{color.value}</div>
-        </div>
+        <>
+          <div className="container">
+            <div
+              key={color.value}
+              style={{
+                height: '40px',
+                width: '80px',
+                backgroundColor: color.raw_hex,
+              }}
+            ></div>
+            <div>
+              <p>{color.value}</p>
+            </div>
+          </div>
+        </>
       ))}
     </>
   );

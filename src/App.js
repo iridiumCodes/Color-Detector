@@ -226,10 +226,11 @@ class App extends Component {
                 onInputChange={this.onInputChange}
                 onButtonDetect={this.onButtonDetect}
               />
-              <ColorDetection imageUrl={imageUrl} />
-              <Swatches colors={colors} />
-              {/*pass the image URL to the ColorDetection component */}
-              {/*TODO add a rendering of the colors and probabilites in chart, & add button to save palette in user profile*/}
+              <div className="center">
+                <ColorDetection imageUrl={imageUrl} />
+                {/*pass the image URL to the ColorDetection component */}
+                <Swatches colors={colors} />
+              </div>
             </>
           ) : route === 'signin' ? (
             <>
