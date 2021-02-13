@@ -2,18 +2,27 @@ import React from 'react';
 
 const Swatches = ({ colors }) => {
   console.log(colors);
-  for (var color of colors) {
-    console.log(`Color: ${color.raw_hex}  Probability: ${color.value}`); // go through response and find hex value for each entry in the array
-  }
+  // const entries = Object.entries(colors);
+  // console.log(entries);
+
   return (
-    <div className="center pa3">
-      <h2>Returned Swatches</h2>
-      {/* <ul>
-        <li>
-          colors.map(color => ( <li key={color.raw_hex}>{color.value}</li> ));
-        </li>
-      </ul> */}
-    </div>
+    <>
+      <h2 className="center">Colors Detected:</h2>
+      {colors.map((color) => (
+        // <div className="center pa2">
+        <div
+          key={color.value}
+          className="mr4"
+          style={{
+            height: '40px',
+            width: '80px',
+            backgroundColor: color.raw_hex,
+          }}
+        >
+          <div>{color.value}</div>
+        </div>
+      ))}
+    </>
   );
 };
 

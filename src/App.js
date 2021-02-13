@@ -122,7 +122,7 @@ const particlesOptions = {
 
 const initialState = {
   imageUrl: '',
-  colors: '',
+  colors: [],
   route: 'signin',
   isSignedIn: false,
   user: {
