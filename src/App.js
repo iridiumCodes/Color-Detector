@@ -125,6 +125,7 @@ function App(props) {
   const [colors, setColors] = useState([]);
   const [route, setRoute] = useState('signin');
   const [isSignedIn, setIsSignedIn] = useState(false);
+  const [input, setInput] = useState('');
   const [user, setUser] = useState({
     id: '',
     name: '',
@@ -200,7 +201,7 @@ function App(props) {
             <div className="center">
               <ColorDetection imageUrl={imageUrl} />
               {/*pass the image URL to the ColorDetection component */}
-              <Swatches colors={colors} />
+              {<Swatches colors={colors} />}
             </div>
           </>
         ) : route === 'signin' ? (
