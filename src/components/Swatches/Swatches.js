@@ -29,5 +29,7 @@ const Swatches = ({ colors }) => {
     </>
   );
 };
-
+// colorsArray.sort((a, b) =>
+//   a.value > b.value ? -1 : b.value > a.value ? 1 : 0
+// );
 export default Swatches;

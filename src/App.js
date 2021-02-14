@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import Particles from 'react-particles-js';
 import './App.css';
 import ColorDetection from './components/ColorDetection/ColorDetection';
@@ -120,146 +120,111 @@ const particlesOptions = {
   retina_detect: true,
 };
 
-const initialState = {
-  imageUrl: '',
-  colors: [],
-  route: 'signin',
-  isSignedIn: false,
-  user: {
+function App(props) {
+  const [imageUrl, setImageUrl] = useState('');
+  const [colors, setColors] = useState([]);
+  const [route, setRoute] = useState('signin');
+  const [isSignedIn, setIsSignedIn] = useState(false);
+  const [user, setUser] = useState({
     id: '',
     name: '',
     email: '',
     palettes: '',
     joined: '',
-  },
-};
+  });
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = initialState;
-  }
-
-  componentDidMount() {
+  useEffect(() => {
     fetch('https://immense-meadow-72319.herokuapp.com/')
       .then((response) => response.json())
       .then(console.log);
-  }
+  });
 
-  onInputChange = (event) => {
-    this.setState({
-      input: event.target.value,
-    }); /* update state with input from field*/
+  const onInputChange = (event) => {
+    setInput(event.target.value); /* update state with input from field*/
   };
 
-  onButtonDetect = (event) => {
-    this.setState({
-      imageUrl: this.state.input,
-    }); /* on button detect click, update state with input URL from input*/
+  const onButtonDetect = (event) => {
+    setImageUrl(
+      input
+    ); /* on button detect click, update state with input URL from input*/
     fetch('https://immense-meadow-72319.herokuapp.com/imageUrl', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        input: this.state.input,
+        input: input,
       }),
     })
       .then((response) => response.json())
-      .then(
-        /*if we use this.state.imageUrl we may get 400 errors */
-        (response) =>
-          this.setState({
-            colors: response.outputs[0].data.colors,
-          })
-      );
-    // let colorsArray = response.outputs[0].data.colors;
-    // colorsArray.sort((a, b) =>
-    //   a.value > b.value ? -1 : b.value > a.value ? 1 : 0
-    // );
-    // console.log(colorsArray);
-    // for (var color of colorsArray) {
-    //   console.log(`Color: ${color.raw_hex}  Probability: ${color.value}`); // go through response and find hex value for each entry in the array
-    // }
-    // function (err) {
-    //   console.log(err); //there was an error
-    // }
+      .then((response) => setColors(response.outputs[0].data.colors))
+      .catch((err) => {
+        console.error(err); //there was an error
+      });
   };
 
-  onRouteChange = (route) => {
-    if (route === 'signout') {
-      this.setState(initialState);
-    } else if (route === 'home') {
-      this.setState({ isSignedIn: true });
+  const onRouteChange = (route) => {
+    if (route === 'home') {
+      setIsSignedIn(true);
     }
-    this.setState({ route: route });
+    setRoute(route);
   };
 
-  loadUser = (data) => {
-    this.setState({
-      user: {
-        id: data.id,
-        name: data.name,
-        email: data.email,
-        palettes: data.palettes,
-        joined: data.joined,
-      },
+  const loadUser = (data) => {
+    setUser({
+      id: data.id,
+      name: data.name,
+      email: data.email,
+      palettes: data.palettes,
+      joined: data.joined,
     });
   };
 
-  render() {
-    const { isSignedIn, imageUrl, route, colors } = this.state;
-    return (
-      <div>
-        <Particles id="particles-js" params={particlesOptions} />
+  return (
+    <div>
+      <Particles id="particles-js" params={particlesOptions} />
 
-        <>
-          {route === 'home' ? (
-            <>
-              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <Logo />
-                <Navigation onRouteChange={this.onRouteChange} />
-              </div>
-              {/* <Palettes
-                name={this.state.user.name}
-                palettes={this.state.user.palettes}
+      <>
+        {route === 'home' ? (
+          <>
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+              <Logo />
+              <Navigation onRouteChange={onRouteChange} />
+            </div>
+            {/* <Palettes
+                name={user.name}
+                palettes={user.palettes}
               /> */}
-              <ImageLinkField
-                onInputChange={this.onInputChange}
-                onButtonDetect={this.onButtonDetect}
-              />
-              <div className="center">
-                <ColorDetection imageUrl={imageUrl} />
-                {/*pass the image URL to the ColorDetection component */}
-                <Swatches colors={colors} />
-              </div>
-            </>
-          ) : route === 'signin' ? (
-            <>
-              <div className="center">
-                <Logo />
-              </div>
-              <div>
-                <Signin
-                  loadUser={this.loadUser}
-                  onRouteChange={this.onRouteChange}
-                />
-              </div>
-            </>
-          ) : (
-            <>
-              <div className="center">
-                <Logo />
-              </div>
-              <div>
-                <Register
-                  loadUser={this.loadUser}
-                  onRouteChange={this.onRouteChange}
-                />
-              </div>
-            </>
-          )}
-        </>
-      </div>
-    );
-  }
+            <ImageLinkField
+              onInputChange={onInputChange}
+              onButtonDetect={onButtonDetect}
+            />
+            <div className="center">
+              <ColorDetection imageUrl={imageUrl} />
+              {/*pass the image URL to the ColorDetection component */}
+              <Swatches colors={colors} />
+            </div>
+          </>
+        ) : route === 'signin' ? (
+          <>
+            <div className="center">
+              <Logo />
+            </div>
+            <div>
+              <Signin loadUser={loadUser} onRouteChange={onRouteChange} />
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="center">
+              <Logo />
+            </div>
+            <div>
+              <Register loadUser={loadUser} onRouteChange={onRouteChange} />
+            </div>
+          </>
+        )}
+      </>
+    </div>
+  );
 }
+
 export default App;
