@@ -8,7 +8,7 @@ function Signin(props) {
     setSignInEmail(event.target.value);
   };
 
-  const onPasswwordChange = (event) => {
+  const onPasswordChange = (event) => {
     setSignInPassword(event.target.value);
   };
 
