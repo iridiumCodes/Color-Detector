@@ -137,7 +137,7 @@ function App(props) {
     fetch('https://immense-meadow-72319.herokuapp.com/')
       .then((response) => response.json())
       .then(console.log);
-  }, []); // added array as a second parameter to define what needs to change in order for useEffect to run, with an empty array it replicates ComponentDidMount
+  }, []); // eg [paramenter] only run if parameter changes - with an empty array it replicates ComponentDidMount
 
   const onInputChange = (event) => {
     setInput(event.target.value); /* update state with input from field*/
