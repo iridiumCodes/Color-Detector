@@ -3,7 +3,7 @@ import './ImageLinkField.css';
 
 const ImageLinkField = ({ onInputChange, onButtonDetect }) => {
   return (
-    <div className="centerVertical tc mt6">
+    <div className="centerVertical tc pa4">
       <h1>Discover your new color palette! Upload an image link below: </h1>
       <div className="w-two-thirds bg-gradient pa4 ma4 br3 shadow-5 center">
         <input

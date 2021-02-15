@@ -1,24 +1,24 @@
 import React from 'react';
 
 const Swatches = ({ colors }) => {
-  console.log(colors);
-  // const entries = Object.entries(colors);
-  // console.log(entries);
-  if (colors.length) {
+  const colorsArray = colors.sort((a, b) =>
+    a.value > b.value ? -1 : b.value > a.value ? 1 : 0
+  );
+  if (colorsArray.length) {
     return (
       <>
-        <div className="item">
+        <div className="item centerVertical">
           <div>
             <h2>Dominant Colors</h2>
           </div>
-          <div>
-            {colors.map((color) => (
+          <div className="flexContainer">
+            {colorsArray.map((color) => (
               <>
                 <div className="swatch">
                   <div
                     key={color.value}
                     style={{
-                      height: '40px',
+                      height: Math.round(color.value * 100) + '%',
                       width: '65px',
                       backgroundColor: color.raw_hex,
                     }}

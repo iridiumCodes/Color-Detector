@@ -33,5 +33,21 @@
 }
 
 .item {
-  width: 48%;
+  width: 50%;
+}
+
+.flexContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 85%;
+}
+
+.swatch {
+  flex-grow: 1;
+  height: 100px;
+}
+
+.swatch + .swatch {
+  margin-left: 5%;
 }

@@ -194,11 +194,13 @@ function App(props) {
                 name={user.name}
                 palettes={user.palettes}
               /> */}
-            <ImageLinkField
-              onInputChange={onInputChange}
-              onButtonDetect={onButtonDetect}
-            />
-            <div className="spaceAround">
+            <div>
+              <ImageLinkField
+                onInputChange={onInputChange}
+                onButtonDetect={onButtonDetect}
+              />
+            </div>
+            <div className="spaceAround pa4">
               <ColorDetection imageUrl={imageUrl} />
               {/*pass the image URL to the ColorDetection component */}
               {<Swatches colors={colors} />}
