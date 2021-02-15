@@ -9,7 +9,6 @@ const Swatches = ({ colors }) => {
       <>
         <h2>Colors Detected:</h2>
         {colors.map((color) => (
-          // <div className="center pa2">
           <>
             <div className="container">
               <div
