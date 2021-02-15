@@ -7,24 +7,30 @@ const Swatches = ({ colors }) => {
   if (colors.length) {
     return (
       <>
-        <h2>Colors Detected:</h2>
-        {colors.map((color) => (
-          <>
-            <div className="container">
-              <div
-                key={color.value}
-                style={{
-                  height: '40px',
-                  width: '80px',
-                  backgroundColor: color.raw_hex,
-                }}
-              ></div>
-              <div>
-                <p>{color.value}</p>
-              </div>
-            </div>
-          </>
-        ))}
+        <div className="item">
+          <div>
+            <h2>Dominant Colors</h2>
+          </div>
+          <div>
+            {colors.map((color) => (
+              <>
+                <div className="swatch">
+                  <div
+                    key={color.value}
+                    style={{
+                      height: '40px',
+                      width: '65px',
+                      backgroundColor: color.raw_hex,
+                    }}
+                  ></div>
+                  <div>
+                    <p>{Math.round(color.value * 100) + '%'}</p>
+                  </div>
+                </div>
+              </>
+            ))}
+          </div>
+        </div>
       </>
     );
   } else {

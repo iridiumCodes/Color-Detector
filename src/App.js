@@ -186,7 +186,7 @@ function App(props) {
       <>
         {route === 'home' ? (
           <>
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <div className="spaceBetween">
               <Logo />
               <Navigation onRouteChange={onRouteChange} />
             </div>
@@ -198,7 +198,7 @@ function App(props) {
               onInputChange={onInputChange}
               onButtonDetect={onButtonDetect}
             />
-            <div className="center">
+            <div className="spaceAround">
               <ColorDetection imageUrl={imageUrl} />
               {/*pass the image URL to the ColorDetection component */}
               {<Swatches colors={colors} />}
