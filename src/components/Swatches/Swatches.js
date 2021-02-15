@@ -3,7 +3,7 @@ import React from 'react';
 const Swatches = ({ colors }) => {
   const colorsArray = colors.sort((a, b) =>
     a.value > b.value ? -1 : b.value > a.value ? 1 : 0
-  );
+  ); //sort array based on value
   if (colorsArray.length) {
     return (
       <>
