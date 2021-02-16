@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Particles from 'react-particles-js';
 import './App.css';
+import Footer from './components/Footer/Footer';
 import ColorDetection from './components/ColorDetection/ColorDetection';
 import ImageLinkField from './components/ImageLinkField/ImageLinkField';
 import Logo from './components/Logo/Logo';
@@ -180,7 +181,7 @@ function App(props) {
   };
 
   return (
-    <div>
+    <div className="content">
       <Particles id="particles-js" params={particlesOptions} />
 
       <>
@@ -225,6 +226,7 @@ function App(props) {
             </div>
           </>
         )}
+        <Footer />
       </>
     </div>
   );
