@@ -85,7 +85,7 @@ function Register(props) {
               onClick={onSubmitRegister}
               className="b ph3 pv2 input-reset br3 bw1 b--dark-gray bg-transparent hover-bg-light-green grow pointer f6 dib button"
               type="submit"
-              value="Set Password and Login"
+              value="Register"
             />
             <p
               onClick={() => onRouteChange('signin')}

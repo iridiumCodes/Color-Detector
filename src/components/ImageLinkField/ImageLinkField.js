@@ -8,7 +8,7 @@ const ImageLinkField = ({ onInputChange, onButtonDetect }) => {
         Discover your new color palette! <br />
         Upload an image link below
       </h1>
-      <div className="w-75 bg-gradient pa4 ma4 br3 shadow-5 inputContainer">
+      <div className="w-75 bg-c pa4 ma4 br3 shadow-5 inputContainer">
         <input
           type="text"
           className="w-50 pa2 mr2 br2 bw1 hover-bg-light-gray"
