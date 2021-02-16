@@ -43,7 +43,7 @@ function Signin(props) {
               </label>
               <input
                 onChange={onEmailChange}
-                className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                className="pa2 input-reset ba bg-transparent hover-bg-light-gray hover-black w-100"
                 type="email"
                 name="email-address"
                 id="email-address"
@@ -55,7 +55,7 @@ function Signin(props) {
               </label>
               <input
                 onChange={onPasswordChange}
-                className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                className="b pa2 input-reset ba bg-transparent hover-bg-light-gray hover-black w-100"
                 type="password"
                 name="password"
                 id="password"
@@ -68,7 +68,7 @@ function Signin(props) {
           <div className="">
             <input
               onClick={onSubmitSignin}
-              className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
+              className="b ph3 pv2 input-reset br3 bw1 b--dark-gray bg-transparent hover-bg-light-green grow pointer f6 dib button"
               type="submit"
               value="Sign in"
             />
