@@ -14,15 +14,18 @@ const Swatches = ({ colors }) => {
           <div className="flexContainer">
             {colorsArray.map((color) => (
               <>
-                <div className="swatch">
+                <div className="swatch spaceBetween">
                   <div
                     key={color.value}
                     style={{
-                      height: Math.round(color.value * 100) + '%',
-                      width: '65px',
+                      height: '40px',
+                      width: '40px',
                       backgroundColor: color.raw_hex,
                     }}
                   ></div>
+                  <div>
+                    <p>{color.raw_hex}</p>
+                  </div>
                   <div>
                     <p>{Math.round(color.value * 100) + '%'}</p>
                   </div>

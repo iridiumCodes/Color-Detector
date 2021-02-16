@@ -208,7 +208,7 @@ function App(props) {
           </>
         ) : route === 'signin' ? (
           <>
-            <div className="center">
+            <div className="flexCenter">
               <Logo />
             </div>
             <div>
@@ -217,7 +217,7 @@ function App(props) {
           </>
         ) : (
           <>
-            <div className="center">
+            <div className="flexCenter">
               <Logo />
             </div>
             <div>
