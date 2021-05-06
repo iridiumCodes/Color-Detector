@@ -6,7 +6,7 @@ const ImageLinkField = ({ onInputChange, onButtonDetect }) => {
     <div className="centerVertical tc pa4">
       <h1>
         Discover your new color palette! <br />
-        Upload an image link below
+        Paste an image URL below
       </h1>
       <div className="w-75 bg-c pa4 ma4 br3 shadow-5 inputContainer">
         <input
