@@ -8,11 +8,11 @@ const Footer = () => {
       </small>
       <div class="tc mt3">
         <a
-          href="https://blog.iridium.codes"
+          href="https://irisdiakoumi.me"
           title="Language"
           class="f6 dib ph2 link mid-gray dim"
         >
-          iridiumCodes
+          Iris Diakoumi
         </a>
         <a
           href="iridiumcodes@gmail.com"
