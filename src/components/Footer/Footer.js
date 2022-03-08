@@ -11,7 +11,7 @@ const Footer = () => {
            class="f6 dib ph2 link mid-gray dim"
         >
           Iris Diakoumi
-        </a>
+        </p>
         <a
           href="https://www.linkedin.com/in/irisdiakoumi/"
           title="Contact"
