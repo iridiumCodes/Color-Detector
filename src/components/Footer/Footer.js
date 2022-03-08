@@ -7,16 +7,14 @@ const Footer = () => {
         ©2021 <b class="ttu">Iris Diakoumi</b>., All Rights Reserved
       </small>
       <div class="tc mt3">
-        <a
-          href="https://irisdiakoumi.me"
-          title="Language"
-          class="f6 dib ph2 link mid-gray dim"
+        <p
+           class="f6 dib ph2 link mid-gray dim"
         >
           Iris Diakoumi
         </a>
         <a
-          href="iridiumcodes@gmail.com"
-          title="Privacy"
+          href="https://www.linkedin.com/in/irisdiakoumi/"
+          title="Contact"
           class="f6 dib ph2 link mid-gray dim"
         >
           Contact
