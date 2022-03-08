@@ -83,5 +83,5 @@ You will also see any lint errors in the console.
 
 ## Author
 
-- Website - [Iris Diakoumi](https://documenting.tech
+- LinkedIn - [Iris Diakoumi](https://www.linkedin.com/in/irisdiakoumi/)
 - Twitter - [@irisdiakoumi](https://www.twitter.com/irisdiakoumi)
