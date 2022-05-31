@@ -9,6 +9,8 @@ import Navigation from './components/Navigation/Navigation';
 import Register from './components/Register/Register';
 import Signin from './components/Signin/Signin';
 import Swatches from './components/Swatches/Swatches';
+import ClipboardCopy from './components/ClipboardCopy/ClipboardCopy';
+
 
 const particlesOptions = {
   particles: {
@@ -205,6 +207,7 @@ function App(props) {
               <ColorDetection imageUrl={imageUrl} />
               {/*pass the image URL to the ColorDetection component */}
               {<Swatches colors={colors} />}
+              {<ClipboardCopy copyText="test" />}
             </div>
           </>
         ) : route === 'signin' ? (
