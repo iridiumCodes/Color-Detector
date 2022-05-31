@@ -26,6 +26,7 @@ const Swatches = ({ colors }) => {
                   <div>
                     <p>{color.raw_hex}</p>
                   </div>
+
                   <div>
                     <p>{Math.round(color.value * 100) + '%'}</p>
                   </div>
@@ -40,7 +41,5 @@ const Swatches = ({ colors }) => {
     return null;
   }
 };
-// colorsArray.sort((a, b) =>
-//   a.value > b.value ? -1 : b.value > a.value ? 1 : 0
-// );
+
 export default Swatches;
