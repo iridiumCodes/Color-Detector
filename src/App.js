@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Particles from 'react-particles-js';
+import Particles from 'react-tsparticles';
 import './App.css';
 import Footer from './components/Footer/Footer';
 import ColorDetection from './components/ColorDetection/ColorDetection';
