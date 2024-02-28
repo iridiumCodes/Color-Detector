@@ -1,4 +1,4 @@
-# Color Detector - Using AI to detect colors in your images
+# [ARCHIVED] Color Detector - Using AI to detect colors in your images
 
 ## Table of contents
 
@@ -13,7 +13,7 @@
 - [Author](#author)
 
 ## Overview
-
+** This project is no longer up and running, due to a lack of maintenance for the past couple of years and the recent changes in the Heroku platform.
 Users should be able to:
 
 - Register a new account
